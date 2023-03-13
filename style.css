@@ -43,86 +43,96 @@ h1:hover{
  cursor: pointer;
 }
 
-.title1, .title2, .title3, .title4, .title5{
+.title{
  display: flex;
  flex-direction: row;
  align-items: center;
- justify-content: space-between;
  padding: 2rem;
  border: solid darkgray;
  border-width: 1px 0 1px 0;
  font-weight: 700;
 }
 
-.title1:hover{
+.title:hover{
  cursor: pointer;
+ color: black;
 }
 
-.title1:not(:hover){
+.title:not(:hover){
  color: rgb(7, 7, 129);
 }
 
-.title2:hover{
- cursor: pointer;
-}
- 
- .title2:not(:hover){
- color: rgb(7, 7, 129);
+input{
+display: none;
 }
 
- .title3:hover{
- cursor: pointer;
- }
- 
- .title3:not(:hover){
- color: rgb(7, 7, 129);
- }
-
- .title4:hover{
- cursor: pointer;
- }
- 
- .title4:not(:hover){
- color: rgb(7, 7, 129);
- }
-
- .title5:hover{
- cursor: pointer;
- }
- 
- .title5:not(:hover){
- color: rgb(7, 7, 129);
- }
- 
-.meme1, .meme2, .meme3, .meme4, .meme5{
- display: none;
- transform: scale(0);
- transition: 0.5s linear all;
+label{
+display: flex;
+flex-direction: column;
 }
 
-.meme-thatyoucansee img{
+label:hover{
+ cursor: pointer;
+}
+
+img{
  max-width: 310px;
-}
-
-.meme-thatyoucansee{
- display: flex;
- align-items: center;
- justify-content: center;
- transform: scale(1);
- transition: 0.5s linear all;
-}
-
-.meme:hover{
  cursor: pointer;
+ opacity: 1;
 }
 
-.plus_img1, .plus_img2, .plus_img3, .plus_img4, .plus_img5{
- width: 3%;
- transition: 0.5s linear all;
+.main:hover label .plus_img{
+ opacity: 1;
+}
+ 
+.label_and_plus {
+ display: flex;
+ justify-content: space-between;
 }
 
-.plus_img-transform{
- width: 3%;
+.plus_img{
+ opacity: 0;
+ width: 5%;
  transform: rotate(45deg);
+ transition: all 0.3s;
+}
+
+.accordion input:checked + label .plus_img{
+ transform: rotate(0deg);
  transition: 0.5s linear all;
+}
+.accordion input:checked + label img{
+ opacity: 0;
+ transition:  0.5s linear all;
+ margin: 1rem;
+}
+
+.meme1 img{
+  opacity: 0;
+}
+.accordion input:checked + label .meme1 img{
+  opacity: 1;
+
+  transition: 0.5s linear all;
+}
+
+.accordion input:checked + label .meme {
+ height: 0;
+}
+
+.accordion input:checked + label .meme1 {
+  height: fit-content;
+ }
+.meme{
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meme1{
+  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
